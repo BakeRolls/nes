@@ -24,6 +24,9 @@ func main() {
 		log.Fatal(err)
 	}
 	c, err := canvas.New(img, 2, os.Args[1])
+	if err != nil {
+		log.Fatal(err)
+	}
 	for c.Update() {
 		c.Draw()
 	}
