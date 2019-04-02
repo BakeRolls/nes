@@ -1,4 +1,4 @@
-// Package nes registers a custom image format for reading NES ROMs. After importing it with `_` you use `image.Decode` to decode a roms sprites into an `image.Image`.
+// Package nes registers a custom image format for reading NES ROMs. After importing it with `_` you can use `image.Decode` to decode a roms sprites into an `image.Image`.
 //
 // (image/Super Mario Bros 1 Sprites) ./testdata/super_mario_bros_sprites.png
 package nes
