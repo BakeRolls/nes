@@ -1,3 +1,6 @@
+// Package nes registers a custom image format for reading NES ROMs. After importing it with `_` you use `image.Decode` to decode a roms sprites into an `image.Image`.
+//
+// (image/Super Mario Bros 1 Sprites) ./testdata/super_mario_bros_sprites.png
 package nes
 
 import (
@@ -29,7 +32,7 @@ var colors = []color.Color{
 	color.RGBA{B: 255, A: 255},
 }
 
-// Decode reads a NES ROM from r and returns it as an image.Image.
+// Decode reads a NES ROM and returns it as an image.Image.
 func Decode(r io.Reader) (image.Image, error) {
 	c, prgBanks, chrBanks, err := decodeConfig(r)
 	if err != nil {

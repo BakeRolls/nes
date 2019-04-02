@@ -1,26 +1,39 @@
 # nes
 
-This is an example on how to register a custom image format and reading NES ROMs. After importing it with `_` you can use it with `image.Decode`. It uses black, red, green and blue as colors and shows 16 tiles per row.
+Package nes registers a custom image format for reading NES ROMs. After importing it with `_` you use `image.Decode` to decode a roms sprites into an `image.Image`.
 
-```go
+![Super Mario Bros 1 Sprites](./testdata/super_mario_bros_sprites.png)
+
+#### Examples
+
+##### Decode
+
+Decode reads a NES ROM and returns it as an image.Image.
+
+```golang
+package main
+
 import (
+	"fmt"
 	"image"
+	"log"
 	"os"
 
-	_ "github.com/BakeRolls/nes"
+	_ "github.com/bakerolls/nes"
 )
 
 func main() {
-	r, err := os.Open("rom.nes")
+	// This rom file does not contain any game logic.
+	r, err := os.Open("testdata/super_mario_bros_sprites.nes")
 	if err != nil {
 		log.Fatal(err)
 	}
 	defer r.Close()
-	img, _, err := image.Decode(r)
+	_, format, err := image.Decode(r)
 	if err != nil {
 		log.Fatal(err)
 	}
+	fmt.Println(format)
 }
-```
 
-To view it in action, see the [NES viewer](/cmd/nes-viewer/main.go) which opens a window displaying the sprites of a given ROM.
+```
