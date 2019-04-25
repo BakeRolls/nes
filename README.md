@@ -1,7 +1,7 @@
 # nes
 
-[![GoDoc](https://godoc.org/github.com/bakerolls/nes?status.svg)](http://godoc.org/github.com/bakerolls/nes)
-[![Go Report Card](https://goreportcard.com/badge/github.com/bakerolls/nes)](https://goreportcard.com/report/github.com/bakerolls/nes)
+[![GoDoc](https://godoc.org/github.com/bake/nes?status.svg)](http://godoc.org/github.com/bake/nes)
+[![Go Report Card](https://goreportcard.com/badge/github.com/bake/nes)](https://goreportcard.com/report/github.com/bake/nes)
 
 Package nes registers a custom image format for reading NES ROMs. After importing it with `_` you can use `image.Decode` to decode a roms sprites into an `image.Image`.
 
@@ -22,7 +22,7 @@ import (
 	"log"
 	"os"
 
-	_ "github.com/bakerolls/nes"
+	_ "github.com/bake/nes"
 )
 
 func main() {

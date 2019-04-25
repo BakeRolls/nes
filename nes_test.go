@@ -6,7 +6,7 @@ import (
 	"log"
 	"os"
 
-	_ "github.com/bakerolls/nes"
+	_ "github.com/bake/nes"
 )
 
 func ExampleDecode() {
